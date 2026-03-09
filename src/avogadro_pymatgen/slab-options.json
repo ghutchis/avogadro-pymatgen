@@ -1,0 +1,8 @@
+{
+    "h": {"type": "integer", "label": "h", "default": 1, "order": 0},
+    "k": {"type": "integer", "label": "k", "default": 1, "order": 1},
+    "l": {"type": "integer", "label": "l", "default": 1, "order": 2},
+    "layers": {"type": "integer", "label": "Layers", "minimum": 1, "default": 4, "order": 3},
+    "vacuum": {"type": "float", "label": "Vacuum (Å)", "minimum": 0.0, "default": 10.0, "order": 4},
+    "termination": {"type": "integer", "label": "Termination index", "minimum": 0, "default": 0, "order": 5}
+}

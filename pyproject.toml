@@ -1,0 +1,36 @@
+[project]
+name = "avogadro-pymatgen"
+version = "0.1.0"
+description = "Generate materials structures for Avogadro 2 using pymatgen"
+authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
+license = "BSD-3-Clause"
+dependencies = ["pymatgen>=2024.0"]
+requires-python = ">= 3.11"
+
+[project.scripts]
+avogadro-pymatgen = "avogadro_pymatgen:main"
+
+[build-system]
+build-backend = "uv_build"
+requires = ["uv_build>=0.10.2,<0.11.0"]
+
+[tool.avogadro]
+minimum-avogadro-version = "1.103"
+
+[[tool.avogadro.menu-commands]]
+identifier = "slab"
+input-format = "cjson"
+menu = "Crystal"
+submenu = "Pymatgen"
+item = "Surface Slab..."
+user-options = "src/avogadro_pymatgen/slab-options.json"
+
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+avogadro-pymatgen = { path = ".", editable = true }
+
+[tool.pixi.tasks]
