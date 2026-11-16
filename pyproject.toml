@@ -1,10 +1,10 @@
 [project]
 name = "avogadro-pymatgen"
-version = "0.1.0"
+version = "0.1.1"
 description = "Generate materials structures for Avogadro 2 using pymatgen"
 authors = [{name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"}]
 license = "BSD-3-Clause"
-dependencies = ["pymatgen>=2024.0"]
+dependencies = ["pymatgen>=2026.10.24"]
 requires-python = ">= 3.11"
 
 [project.scripts]
@@ -13,6 +13,11 @@ avogadro-pymatgen = "avogadro_pymatgen:main"
 [build-system]
 build-backend = "uv_build"
 requires = ["uv_build>=0.10.2,<0.11.0"]
+
+# .github/workflows/update-dependencies.yml checks PyPI / conda-forge daily for
+# these packages and opens a PR raising their ">=" floors and the version.
+[tool.update-dependencies]
+track = ["pymatgen"]
 
 [tool.avogadro]
 minimum-avogadro-version = "1.103"
